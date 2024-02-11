@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/11-React-Testimonials-App/static/css/main.611f7904.css",
+    "main.js": "/11-React-Testimonials-App/static/js/main.b85bc581.js",
+    "index.html": "/11-React-Testimonials-App/index.html",
+    "main.611f7904.css.map": "/11-React-Testimonials-App/static/css/main.611f7904.css.map",
+    "main.b85bc581.js.map": "/11-React-Testimonials-App/static/js/main.b85bc581.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.611f7904.css",
+    "static/js/main.b85bc581.js"
+  ]
+}
