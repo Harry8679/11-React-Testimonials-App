@@ -17,7 +17,7 @@ const Testimonial = () => {
             <div className={index === currentSlide ? 'slide current' : 'slide'}>
               {index === currentSlide && (
                 <div>
-                  <p>{user.desc}</p>
+                  <p className='text'>{user.desc}</p>
                   <img src={user.img} alt="user" />
                   <h4>{user.name}</h4>
                   <p className="--fw-thin">
@@ -28,8 +28,8 @@ const Testimonial = () => {
             </div>
           ))}
           <div className="buttons">
-            <FaArrowCircleLeft size={25} className='prev' />
-            <FaArrowCircleRight size={25} className='next' />
+            <FaArrowCircleLeft size={30} className='prev' />
+            <FaArrowCircleRight size={30} className='next' />
           </div>
         </div>
       </div>
