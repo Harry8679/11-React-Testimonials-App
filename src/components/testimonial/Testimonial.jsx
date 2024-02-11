@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Testimonial.scss';
 import { FaQuoteLeft } from "react-icons/fa";
 import { users } from './data';
@@ -7,6 +7,19 @@ import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 const Testimonial = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const slideLength = users.length;
+
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === slideLength -1 ? 0 : currentSlide + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1);
+  }
+
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, []);
   return (
     <section className='main --flex-center'>
       <div className="container --text-center">
@@ -14,7 +27,7 @@ const Testimonial = () => {
         <div className="slider">
           <FaQuoteLeft className='icon' />
           {users.map((user, index) => (
-            <div className={index === currentSlide ? 'slide current' : 'slide'}>
+            <div className={index === currentSlide ? 'slide current' : 'slide'} key={index}>
               {index === currentSlide && (
                 <div>
                   <p className='text'>{user.desc}</p>
@@ -28,8 +41,8 @@ const Testimonial = () => {
             </div>
           ))}
           <div className="buttons">
-            <FaArrowCircleLeft size={30} className='prev' />
-            <FaArrowCircleRight size={30} className='next' />
+            <FaArrowCircleLeft size={30} className='prev' onClick={prevSlide} />
+            <FaArrowCircleRight size={30} className='next' onClick={nextSlide} />
           </div>
         </div>
       </div>
